@@ -11,13 +11,17 @@ function Workouts() {
   }, []);
 
   return (
-    <div>
-      <h1>Workouts</h1>
-      <ul>
-        {workouts.map(workout => (
-          <li key={workout._id}>{workout.name} - {workout.description}</li>
-        ))}
-      </ul>
+    <div className="card">
+      <div className="card-body">
+        <h1 className="card-title text-primary">Workouts</h1>
+        <ul className="list-group">
+          {workouts.map(workout => (
+            <li key={workout._id} className="list-group-item">
+              <strong>{workout.name}</strong>: {workout.description}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
